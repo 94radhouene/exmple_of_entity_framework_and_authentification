@@ -1,10 +1,10 @@
 ﻿@model AdminDashboradRh.Models.EmployeeApp
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Creat_Get";
 }
 
-<h2>Create</h2>
+<h2>Create_Post</h2>
 
 @using (Html.BeginForm()) 
 {
@@ -14,6 +14,7 @@
         <h4>EmployeeApp</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+   
         <div class="form-group">
             @Html.LabelFor(model => model.Name_Employee, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

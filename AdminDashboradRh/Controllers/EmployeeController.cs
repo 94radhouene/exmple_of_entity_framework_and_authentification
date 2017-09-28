@@ -24,6 +24,7 @@ namespace AdminDashboradRh.Controllers
             int pageNumber = (page ?? 1);
             return View(employees.ToPagedList(pageNumber, pageSize)); ;
         }
+        [HttpGet]
         public ActionResult Create()
         {
           
@@ -32,17 +33,20 @@ namespace AdminDashboradRh.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+
+        [ActionName("Create")]
         public ActionResult Create([Bind(Include = "Name_Employee,Age_Employee,Poste_Employee")] EmployeeApp Employees)
         {
             if (ModelState.IsValid)
             {
+               
                 db.Employees.Add(Employees);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
          
-            return View(Employees);
+            return RedirectToAction("Create");
         }
 
 

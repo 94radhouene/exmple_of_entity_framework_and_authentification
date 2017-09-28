@@ -112,7 +112,6 @@
     <Content Include="build\images\loading.gif" />
     <Content Include="build\js\custom.js" />
     <Content Include="build\js\custom.min.js" />
-    <Content Include="Content\Site.css" />
     <Content Include="css\maps\jquery-jvectormap-2.0.3.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -4402,10 +4401,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Views\Succes\Succes.cshtml" />
+    <Content Include="Views\Succes\Index.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Employee\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

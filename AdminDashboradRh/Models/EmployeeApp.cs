@@ -4,9 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace AdminDashboradRh.Models
 {
+    [Bind(Exclude = "id_Employee")]
     [Table("Employe_Biwam")]
     public partial class EmployeeApp
     {
