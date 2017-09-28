@@ -28,7 +28,7 @@ namespace AdminDashboradRh.Controllers
                     {
                         Session["LogedUserID"] = v.username.ToString();
                         Session["LogedUserFullname"] = v.Password.ToString();
-                        return View("Success");
+                        return View("Succes");
                     }
                 }
             }
