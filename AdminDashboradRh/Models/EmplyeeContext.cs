@@ -6,24 +6,23 @@ using System.Web;
 
 namespace AdminDashboradRh.Models
 {
-    public class RhContext : DbContext
+    public class EmplyeeContext : DbContext
     {
-        public RhContext()
+        public EmplyeeContext()
             : base("name=RhAppContext")
         {
         }
 
 
 
-        public virtual DbSet<UserApp> Users { get; set; }
-       
-        public class Userviewmodel
-        {
-            public UserApp user { get; set; }
-        }
+      
+
+      
         public class Employeeviewmodel
         {
             public EmployeeApp Employee { get; set; }
         }
+
+        public virtual DbSet<EmployeeApp> Employees { get; set; }
     }
 }
