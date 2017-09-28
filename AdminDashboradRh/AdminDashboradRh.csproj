@@ -4392,6 +4392,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Views\Succes\Succes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -4401,7 +4402,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Succes\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="vendors\devbridge-autocomplete\src\jquery.autocomplete.d.ts" />

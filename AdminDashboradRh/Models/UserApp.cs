@@ -12,9 +12,9 @@ namespace AdminDashboradRh.Models
     {
         [Key]
         [Display(Name = "Name_User")]
-        public string username { get; set; }
+        public string Name_User { get; set; }
         [Display(Name = "Password_User")]
-        public string Password { get; set; }
+        public string Password_User { get; set; }
         public string[] Roles { get; set; }
 
     }

@@ -23,12 +23,12 @@ namespace AdminDashboradRh.Controllers
             {
                 using (RhContext dc = new RhContext())
                 {
-                    var v = dc.Users.Where(a => a.username.Equals(u.username) && a.Password.Equals(u.Password)).FirstOrDefault();
+                    var v = dc.Users.Where(a => a.Name_User.Equals(u.Name_User) && a.Password_User.Equals(u.Password_User)).FirstOrDefault();
                     if (v != null)
                     {
-                        Session["LogedUserID"] = v.username.ToString();
-                        Session["LogedUserFullname"] = v.Password.ToString();
-                        return View("Succes");
+                        Session["LogedUserID"] = v.Name_User.ToString();
+                        Session["LogedUserFullname"] = v.Password_User.ToString();
+                        return View("../Succes/Succes");
                     }
                 }
             }
