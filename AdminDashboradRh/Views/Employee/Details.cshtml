@@ -1,0 +1,42 @@
+﻿@model AdminDashboradRh.Models.EmployeeApp
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EmployeeApp</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name_Employee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name_Employee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age_Employee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age_Employee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Poste_Employee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Poste_Employee)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_Employee }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

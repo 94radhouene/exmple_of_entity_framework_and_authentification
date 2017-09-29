@@ -8,9 +8,16 @@ using System.Web.Mvc;
 
 namespace AdminDashboradRh.Models
 {
-    [Bind(Exclude = "id_Employee")]
+    public interface IEmployee
+    {
+         string Name_Employee { get; set; }
+         int Age_Employee { get; set; }
+         string Poste_Employee { get; set; }
+    }
+
     [Table("Employe_Biwam")]
-    public partial class EmployeeApp
+    [Bind(Exclude = "id_Employee")]
+    public partial class EmployeeApp : IEmployee
     {
         [Key]
         public int id_Employee { get; set; }

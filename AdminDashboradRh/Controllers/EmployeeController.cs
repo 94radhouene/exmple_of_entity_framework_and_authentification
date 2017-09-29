@@ -2,7 +2,9 @@
 using PagedList;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -24,13 +26,15 @@ namespace AdminDashboradRh.Controllers
             int pageNumber = (page ?? 1);
             return View(employees.ToPagedList(pageNumber, pageSize)); ;
         }
+        // create employee
+        // get the view of creation 
         [HttpGet]
         public ActionResult Create()
         {
           
             return View();
         }
-
+        // send the data 
         [HttpPost]
         [ValidateAntiForgeryToken]
 
@@ -47,6 +51,57 @@ namespace AdminDashboradRh.Controllers
 
          
             return RedirectToAction("Create");
+        }
+
+        // detail of employee
+        // get id of emplyee
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            EmployeeApp tblEmployee = db.Employees.Find(id);
+            if (tblEmployee == null)
+            {
+                return HttpNotFound();
+            }
+      
+            return View(tblEmployee);
+        }
+        // GET: tblEmployees/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            EmployeeApp tblEmployee = db.Employees.Find(id);
+            if (tblEmployee == null)
+            {
+                return HttpNotFound();
+            }
+          
+            return View(tblEmployee);
+        }
+
+        // POST: tblEmployees/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id)
+        {
+            EmployeeApp tblEmployee = db.Employees.Find(id);
+            UpdateModel<IEmployee>(tblEmployee);
+            if (ModelState.IsValid)
+            {
+                db.Entry(tblEmployee).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+         
+            return View(tblEmployee);
         }
 
 

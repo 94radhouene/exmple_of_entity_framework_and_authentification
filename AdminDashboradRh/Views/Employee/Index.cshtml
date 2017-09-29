@@ -222,6 +222,9 @@
                                                 <th>@Html.DisplayNameFor(model => model.First().Name_Employee)</th>
                                                 <th>@Html.DisplayNameFor(model => model.First().Poste_Employee)</th>
                                                 <th>@Html.DisplayNameFor(model => model.First().Age_Employee)</th>
+                                                <th>Details</th>
+                                                <th>Delete</th>
+                                                <th>Edit</th>
                                              
                                             </tr>
                                         </thead>
@@ -232,6 +235,9 @@
                                                 <td>@Html.DisplayFor(modelItem => item.Name_Employee)</td>
                                                 <td>@Html.DisplayFor(modelItem => item.Poste_Employee)</td>
                                                 <td>@Html.DisplayFor(modelItem => item.Age_Employee)</td>
+                                                <td>@Html.ActionLink("Edit", "Edit", new { id = item.id_Employee , @class = "text-muted font-13 m-b-30" })</td>
+                                                <td>@Html.ActionLink("Details", "Details", new { id = item.id_Employee , @class = "text-muted font-13 m-b-30" })</td>
+                                                <td>@Html.ActionLink("Delete", "Delete", new { id = item.id_Employee , @class = "text-muted font-13 m-b-30" })</td>
                                             </tr>
 
                                         </tbody>

@@ -27,7 +27,7 @@ namespace AdminDashboradRh.Controllers
                     if (v != null)
                     {
                         Session["LogedUserID"] = v.Name_User.ToString();
-                        Session["LogedUserFullname"] = v.Password_User.ToString();
+                      
                         return RedirectToAction("Index", "Succes");
                     }
                 }
