@@ -103,6 +103,31 @@ namespace AdminDashboradRh.Controllers
          
             return View(tblEmployee);
         }
+        // GET: tblEmployees/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            EmployeeApp tblEmployee = db.Employees.Find(id);
+            if (tblEmployee == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tblEmployee);
+        }
+
+        // POST: tblEmployees/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            EmployeeApp tblEmployee = db.Employees.Find(id);
+            db.Employees.Remove(tblEmployee);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
 
     }
